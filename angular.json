@@ -1,0 +1,171 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "image-steam-client": {
+      "root": "projects/image-steam-client",
+      "sourceRoot": "projects/image-steam-client/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/image-steam-client/tsconfig.lib.json",
+            "project": "projects/image-steam-client/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/image-steam-client/src/test.ts",
+            "tsConfig": "projects/image-steam-client/tsconfig.spec.json",
+            "karmaConfig": "projects/image-steam-client/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/image-steam-client/tsconfig.lib.json",
+              "projects/image-steam-client/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "image-steam-client-tester": {
+      "root": "projects/image-steam-client-tester/",
+      "sourceRoot": "projects/image-steam-client-tester/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/image-steam-client-tester",
+            "index": "projects/image-steam-client-tester/src/index.html",
+            "main": "projects/image-steam-client-tester/src/main.ts",
+            "polyfills": "projects/image-steam-client-tester/src/polyfills.ts",
+            "tsConfig": "projects/image-steam-client-tester/tsconfig.app.json",
+            "assets": [
+              "projects/image-steam-client-tester/src/favicon.ico",
+              "projects/image-steam-client-tester/src/assets"
+            ],
+            "styles": [
+              "projects/image-steam-client-tester/src/styles.css"
+            ],
+            "scripts": [],
+            "es5BrowserSupport": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/image-steam-client-tester/src/environments/environment.ts",
+                  "with": "projects/image-steam-client-tester/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "image-steam-client-tester:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "image-steam-client-tester:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "image-steam-client-tester:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/image-steam-client-tester/src/test.ts",
+            "polyfills": "projects/image-steam-client-tester/src/polyfills.ts",
+            "tsConfig": "projects/image-steam-client-tester/tsconfig.spec.json",
+            "karmaConfig": "projects/image-steam-client-tester/karma.conf.js",
+            "styles": [
+              "projects/image-steam-client-tester/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "projects/image-steam-client-tester/src/favicon.ico",
+              "projects/image-steam-client-tester/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/image-steam-client-tester/tsconfig.app.json",
+              "projects/image-steam-client-tester/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "image-steam-client-tester-e2e": {
+      "root": "projects/image-steam-client-tester-e2e/",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/image-steam-client-tester-e2e/protractor.conf.js",
+            "devServerTarget": "image-steam-client-tester:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "image-steam-client-tester:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "projects/image-steam-client-tester-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "image-steam-client"
+}
