@@ -21,4 +21,5 @@ Image steam client is an Angular component which allows for easy configuration o
 <lib-image-steam-client [imageUrl]="imageUrl" [sharpen.r]="1" [sharpen.flat]="1.0"></lib-image-steam-client>
 <lib-image-steam-client [imageUrl]="imageUrl" [blur]="20"></lib-image-steam-client>
 <lib-image-steam-client [imageUrl]="imageUrl" [greyscale]="true"></lib-image-steam-client>
-<lib-image-steam-client [imageUrl]="imageUrl" [normalize]="true"></lib-image-steam-client>```
+<lib-image-steam-client [imageUrl]="imageUrl" [normalize]="true"></lib-image-steam-client>
+```

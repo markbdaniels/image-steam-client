@@ -1,8 +1,20 @@
 {
-  "name": "image-steam-client",
-  "version": "1.0.0",
-  "peerDependencies": {
-    "@angular/common": "^7.2.0",
-    "@angular/core": "^7.2.0"
-  }
+	"name": "image-steam-client",
+	"version": "1.0.0",
+	"description": "Angular component which allows for easy configuration of the https://www.npmjs.com/package/image-steam instructions in your markup.",
+	"keywords": [
+		"Angular",
+		"Library"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/markbdaniels/image-steam-client.git"
+	},
+	"author": "Mark Daniels",
+	"license": "MIT",
+	"homepage": "https://github.com/markbdaniels/image-steam-client#readme",
+	"peerDependencies": {
+		"@angular/common": "^7.2.0",
+		"@angular/core": "^7.2.0"
+	}
 }

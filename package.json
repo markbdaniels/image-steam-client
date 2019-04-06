@@ -1,24 +1,55 @@
-
-# Welcome to image-steam-client!
-
-Image steam client is an Angular component which allows for easy configuration of the [image-steam](https://www.npmjs.com/package/image-steam) instructions in your markup.
-
-# Examples
-
-```html
-<lib-image-steam-client [imageUrl]="imageUrl" [resize.width]="200"></lib-image-steam-client>
-<lib-image-steam-client [imageUrl]="imageUrl" [resize.height]="{units:75, modifier:'%'}"></lib-image-steam-client>
-<lib-image-steam-client [imageUrl]="imageUrl" [crop.top]="50" [crop.left]="50" [crop.width]="{units:75, modifier:'%'}" [crop.height]="{units:75, modifier:'%'}"></lib-image-steam-client>
-<lib-image-steam-client [imageUrl]="imageUrl" [flatten]="true"></lib-image-steam-client>
-<lib-image-steam-client [imageUrl]="imageUrl" [rotate]="270"></lib-image-steam-client>
-<lib-image-steam-client [imageUrl]="imageUrl" [flip.x]="true" [flip.y]="true"></lib-image-steam-client>
-<lib-image-steam-client [imageUrl]="imageUrl" [extend.top]="{units:10, modifier:'%'}" [extend.background]="'hex(123123)'"></lib-image-steam-client>
-<lib-image-steam-client [imageUrl]="imageUrl" [quality]="1"></lib-image-steam-client>
-<lib-image-steam-client [imageUrl]="imageUrl" [compression]="0"></lib-image-steam-client>
-<lib-image-steam-client [imageUrl]="imageUrl" [progressive]="true"></lib-image-steam-client>
-<lib-image-steam-client [imageUrl]="imageUrl" [format]="'png'"></lib-image-steam-client>
-<lib-image-steam-client [imageUrl]="imageUrl" [metadata]="false"></lib-image-steam-client>
-<lib-image-steam-client [imageUrl]="imageUrl" [sharpen.r]="1" [sharpen.flat]="1.0"></lib-image-steam-client>
-<lib-image-steam-client [imageUrl]="imageUrl" [blur]="20"></lib-image-steam-client>
-<lib-image-steam-client [imageUrl]="imageUrl" [greyscale]="true"></lib-image-steam-client>
-<lib-image-steam-client [imageUrl]="imageUrl" [normalize]="true"></lib-image-steam-client>```
+{
+	"name": "image-steam-client",
+	"version": "0.0.0",
+	"scripts": {
+		"ng": "ng",
+		"start": "ng serve",
+		"build": "ng build",
+		"test": "ng test",
+		"lint": "ng lint",
+		"e2e": "ng e2e",
+		"build_lib": "ng build image-steam-client",
+		"npm_pack": "cd dist/image-steam-client && npm pack",
+		"package": "npm run build_lib && npm run npm_pack"
+	},
+	"private": true,
+	"dependencies": {
+		"@angular/animations": "~7.2.0",
+		"@angular/common": "~7.2.0",
+		"@angular/compiler": "~7.2.0",
+		"@angular/core": "~7.2.0",
+		"@angular/forms": "~7.2.0",
+		"@angular/platform-browser": "~7.2.0",
+		"@angular/platform-browser-dynamic": "~7.2.0",
+		"@angular/router": "~7.2.0",
+		"core-js": "^2.5.4",
+		"rxjs": "~6.3.3",
+		"tslib": "^1.9.0",
+		"zone.js": "~0.8.26"
+	},
+	"devDependencies": {
+		"@angular-devkit/build-angular": "~0.13.0",
+		"@angular-devkit/build-ng-packagr": "~0.13.0",
+		"@angular/cli": "~7.3.7",
+		"@angular/compiler-cli": "~7.2.0",
+		"@angular/language-service": "~7.2.0",
+		"@types/node": "~8.9.4",
+		"@types/jasmine": "~2.8.8",
+		"@types/jasminewd2": "~2.0.3",
+		"codelyzer": "~4.5.0",
+		"jasmine-core": "~2.99.1",
+		"jasmine-spec-reporter": "~4.2.1",
+		"karma": "~4.0.0",
+		"karma-chrome-launcher": "~2.2.0",
+		"karma-coverage-istanbul-reporter": "~2.0.1",
+		"karma-jasmine": "~1.1.2",
+		"karma-jasmine-html-reporter": "^0.2.2",
+		"ng-packagr": "^4.2.0",
+		"protractor": "~5.4.0",
+		"ts-node": "~7.0.0",
+		"tsickle": ">=0.34.0",
+		"tslib": "^1.9.0",
+		"tslint": "~5.11.0",
+		"typescript": "~3.2.2"
+	}
+}
